@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #111; 
+    color: #fff;
+    transition: background-color 2s ease, color 2s ease;
+    overflow: hidden;
+}
+
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+}
+
+.ui-overlay {
+    z-index: 10; 
+    pointer-events: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Daytime message styling */
+h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    opacity: 0.8;
+    letter-spacing: 2px;
+}
+
+/* Minimalist Circular Button */
+button {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Frosted glass effect */
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%; /* Makes it a perfect circle */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 6px; /* Visually centers the play triangle */
+    backdrop-filter: blur(5px);
+}
+
+/* Adjusts centering when it switches to the Pause icon */
+button.playing {
+    padding-left: 0; 
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.8);
+}
